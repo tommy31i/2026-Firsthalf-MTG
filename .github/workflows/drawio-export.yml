@@ -1,0 +1,22 @@
+name: Export draw.io
+on:
+  push:
+    paths:
+      - '**.drawio'
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Export draw.io to SVG
+        uses: rlespinasse/drawio-export-action@v2
+        with:
+          format: svg
+          output: docs/images/
+      - name: Commit SVG
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add docs/images/
+          git commit -m "Export draw.io to SVG" && git push || echo "No changes"
