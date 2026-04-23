@@ -1,0 +1,171 @@
+<mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ========== PATTERN A ========== -->
+
+    <!-- ラベル: パターンA -->
+    <mxCell id="label_a" value="パターンA　ワイヤレスもZoomへ（音声出力にAUXが混ざらない場合）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="40" y="20" width="700" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- XLRマイク① -->
+    <mxCell id="a_mic1" value="XLRマイク①&lt;br&gt;XLR（バランス）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="40" y="70" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- XLRマイク② -->
+    <mxCell id="a_mic2" value="XLRマイク②&lt;br&gt;XLR（バランス）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="40" y="140" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- ワイヤレスマイク -->
+    <mxCell id="a_wl" value="ワイヤレスマイク&lt;br&gt;（無線送信）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="40" y="210" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- AG06 -->
+    <mxCell id="a_ag06" value="AG06&lt;br&gt;―――――――――&lt;br&gt;CH1: XLR（バランス入力）&lt;br&gt;CH2: XLR（バランス入力）&lt;br&gt;CH3: 6.3mm TRS（ライン入力）&lt;br&gt;―――――――――&lt;br&gt;TO PC: INPUT MIX&lt;br&gt;MONITOR OUT: 6.3mm TRS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="270" y="60" width="220" height="210" as="geometry" />
+    </mxCell>
+
+    <!-- ATW-SP707a -->
+    <mxCell id="a_atw" value="ATW-SP707a&lt;br&gt;―――――――――&lt;br&gt;AUX入力: RCA赤白&lt;br&gt;音声出力: 6.3mm TS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="270" y="310" width="220" height="90" as="geometry" />
+    </mxCell>
+
+    <!-- PC/Zoom -->
+    <mxCell id="a_pc" value="PC / Zoom&lt;br&gt;（USB接続）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="580" y="100" width="150" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- 注記A -->
+    <mxCell id="a_note" value="&#x26A0; TO PC = INPUT MIX&lt;br&gt;→ USB返し音はPCへ送られない&lt;br&gt;→ ループしない（前提条件）" style="text;html=1;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="580" y="200" width="220" height="70" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: XLRマイク①→AG06 CH1 -->
+    <mxCell id="a_arr_mic1" value="XLRケーブル（バランス）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;fontColor=#82b366;fontSize=10;" edge="1" source="a_mic1" target="a_ag06" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: XLRマイク②→AG06 CH2 -->
+    <mxCell id="a_arr_mic2" value="XLRケーブル（バランス）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;fontColor=#82b366;fontSize=10;" edge="1" source="a_mic2" target="a_ag06" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: ワイヤレス→ATW（無線） -->
+    <mxCell id="a_arr_wl" value="無線" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;dashed=1;fontColor=#82b366;fontSize=10;" edge="1" source="a_wl" target="a_atw" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: ATW音声出力→AG06 CH3（6.3mm TS→TRS） -->
+    <mxCell id="a_arr_atw_ag06" value="6.3mm TS出力→TRS受け&lt;br&gt;（TS側が少ないので安全）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b85450;fontColor=#b85450;fontSize=10;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" edge="1" source="a_atw" target="a_ag06" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="200" y="355" />
+          <mxPoint x="200" y="210" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- 矢印: AG06→PC USB -->
+    <mxCell id="a_arr_usb_out" value="USB（マイク音声→Zoom）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=10;" edge="1" source="a_ag06" target="a_pc" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: PC→AG06 USB返し -->
+    <mxCell id="a_arr_usb_in" value="USB（Zoom音声返し）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;dashed=1;fontColor=#6c8ebf;fontSize=10;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" edge="1" source="a_pc" target="a_ag06" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: AG06 MONITOR OUT→ATW AUX -->
+    <mxCell id="a_arr_mon" value="6.3mm TRS → RCA変換&lt;br&gt;（Zoom音声を会場へ）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b85450;fontColor=#b85450;fontSize=10;exitX=1;exitY=0.8;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" edge="1" source="a_ag06" target="a_atw" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="540" y="228" />
+          <mxPoint x="540" y="337" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ========== PATTERN B ========== -->
+
+    <!-- ラベル: パターンB -->
+    <mxCell id="label_b" value="パターンB　ワイヤレスは会場専用（安全確実・推奨）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="40" y="450" width="700" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- XLRマイク① B -->
+    <mxCell id="b_mic1" value="XLRマイク①&lt;br&gt;XLR（バランス）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="40" y="500" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- XLRマイク② B -->
+    <mxCell id="b_mic2" value="XLRマイク②&lt;br&gt;XLR（バランス）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="40" y="570" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- ワイヤレスマイク B（グレー） -->
+    <mxCell id="b_wl" value="ワイヤレスマイク&lt;br&gt;（会場スピーカー専用）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="40" y="640" width="150" height="50" as="geometry" />
+    </mxCell>
+
+    <!-- AG06 B -->
+    <mxCell id="b_ag06" value="AG06&lt;br&gt;―――――――――&lt;br&gt;CH1: XLR（バランス入力）&lt;br&gt;CH2: XLR（バランス入力）&lt;br&gt;―――――――――&lt;br&gt;TO PC: INPUT MIX&lt;br&gt;MONITOR OUT: 6.3mm TRS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="270" y="490" width="220" height="180" as="geometry" />
+    </mxCell>
+
+    <!-- ATW-SP707a B -->
+    <mxCell id="b_atw" value="ATW-SP707a&lt;br&gt;―――――――――&lt;br&gt;AUX入力: RCA赤白&lt;br&gt;（音声出力は使わない）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="270" y="710" width="220" height="90" as="geometry" />
+    </mxCell>
+
+    <!-- PC/Zoom B -->
+    <mxCell id="b_pc" value="PC / Zoom&lt;br&gt;（USB接続）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="580" y="520" width="150" height="60" as="geometry" />
+    </mxCell>
+
+    <!-- 注記B -->
+    <mxCell id="b_note" value="&#x2714; ループリスクなし&lt;br&gt;&#x2714; 音声出力端子は接続しない&lt;br&gt;&#x2714; シンプルで確実" style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;" vertex="1" parent="1">
+      <mxGeometry x="580" y="620" width="200" height="70" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: XLRマイク①→AG06 B -->
+    <mxCell id="b_arr_mic1" value="XLRケーブル（バランス）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;fontColor=#82b366;fontSize=10;" edge="1" source="b_mic1" target="b_ag06" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: XLRマイク②→AG06 B -->
+    <mxCell id="b_arr_mic2" value="XLRケーブル（バランス）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;fontColor=#82b366;fontSize=10;" edge="1" source="b_mic2" target="b_ag06" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: ワイヤレス→ATW B（無線のみ） -->
+    <mxCell id="b_arr_wl" value="無線のみ（会場内完結）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;dashed=1;fontColor=#666666;fontSize=10;" edge="1" source="b_wl" target="b_atw" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: AG06→PC USB B -->
+    <mxCell id="b_arr_usb_out" value="USB（マイク音声→Zoom）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=10;" edge="1" source="b_ag06" target="b_pc" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: PC→AG06 USB返し B -->
+    <mxCell id="b_arr_usb_in" value="USB（Zoom音声返し）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;dashed=1;fontColor=#6c8ebf;fontSize=10;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" edge="1" source="b_pc" target="b_ag06" parent="1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- 矢印: AG06 MONITOR OUT→ATW AUX B -->
+    <mxCell id="b_arr_mon" value="6.3mm TRS → RCA変換&lt;br&gt;（Zoom音声を会場へ）" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b85450;fontColor=#b85450;fontSize=10;exitX=1;exitY=0.8;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" edge="1" source="b_ag06" target="b_atw" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="540" y="634" />
+          <mxPoint x="540" y="737" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
